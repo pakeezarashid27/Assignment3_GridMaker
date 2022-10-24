@@ -101,7 +101,10 @@ function addC() {
 
 function removeR() {
 
-    if (numRows === 0) return;
+    if (numRows === 0) {
+      alert("Can't delete a row that doesn't exist!");
+      return
+    }
 
     const table = document.querySelector("#grid");
 
@@ -128,7 +131,10 @@ function removeR() {
 
 function removeC() {
 
-    if (numCols === 0) return;
+    if (numCols === 0) {
+      alert("Can't delete a column that doesn't exist!");
+      return
+    }
 
     const table = document.querySelector("#grid");
     const rows = document.querySelectorAll("tr");
@@ -176,17 +182,22 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    let row = document.getElementsByTagName("td"); //get array of all cells
-    for (let i = 0; i < row.length; i++) {
-        row[i].style.backgroundColor = colorSelected; // fills the cell with the color selected
-    }
+  let cells = document.querySelectorAll("td");
+
+  //No need for condition, because we are filling ALL cells.
+
+  //This accesses every individual cell
+  cells.forEach(
+      function(node){
+          node.style.backgroundColor = colorSelected;
+      }
+  )
 }
 
 
 // Clear all cells
 function clearAll(){
-    let row = document.getElementsByTagName("td"); //get array of all cells
-    for (let i = 0; i < row.length; i++) {
-        row[i].style.removeProperty("background-color"); // remove the backgroundColor
-    }
+    let row = document.querySelectorAll("td"); //get array of all cells
+    //Setting the background color of every node (cell) to blank, which is white.
+      cells.forEach((node) => node.style.backgroundColor = "");
 }
