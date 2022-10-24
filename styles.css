@@ -1,9 +1,31 @@
 tr,td{
-    border:1px;
-    border-style: solid;
+    border: 5px;
+    border-style: double;
 }
 td{
-    height: 50px;
-    width: 50px;
-    background-color: white;
+    height: 80px;
+    width: 80px;
+    background-color: rgb(253, 253, 253);
+    border-radius: 30%;
+    border-color: rgb(78, 5, 85);
+}
+
+body{
+    background-color:#92d2f9 ;
+}
+button,select{
+    background-color:#efeff0 ;
+    border-radius: 25%;
+    box-sizing: border-box;
+    height: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 10px;
+    color: black;
+    border: 2px solid #535b6b;
+    font-size:medium;
+    font-style:bold;
+}
+button{
+
 }
